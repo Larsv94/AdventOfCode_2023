@@ -1,7 +1,7 @@
 ﻿using AdventOfCode_2023.Console.Config;
 using System.Diagnostics;
 
-var solving = 1;
+var solving = 2;
 
 var solutions = typeof(Program).Assembly.GetTypes()
     .Where(t => t.IsClass && !t.IsAbstract && typeof(ISolution).IsAssignableFrom(t))
@@ -24,7 +24,7 @@ Console.WriteLine($"Part 1: {solutionPart1} ({stopwatch.ElapsedMilliseconds}ms)"
 
 stopwatch.Restart();
 stopwatch.Start();
-var solutionPart2 = "Unsolved";
+string solutionPart2;
 try
 {
     solutionPart2 = await solutions[solving - 1].SolvePart2(input);
