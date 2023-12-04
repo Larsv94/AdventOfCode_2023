@@ -2,11 +2,11 @@
 using System.Text.RegularExpressions;
 
 namespace AdventOfCode_2023.Console.Day2;
-public partial class Day2Solution : ISolution
+public partial class Day2Solution(string[] input) : BaseSolution(input)
 {
-    public int Day => 2;
+    public override int Day => 2;
 
-    public ValueTask<Answer> SolvePart1(string[] lines)
+    public override ValueTask<Answer> SolvePart1()
     {
         var cubes = new Dictionary<string, int>
         {
@@ -15,7 +15,7 @@ public partial class Day2Solution : ISolution
             { "blue", 14 },
         };
 
-        var games = lines
+        var games = _input
             .Select(x => GameRegex()
                 .Match(x).Groups)
             .Where(groups => groups[5].Captures
@@ -30,9 +30,9 @@ public partial class Day2Solution : ISolution
         return new Answer(games);
     }
 
-    public ValueTask<Answer> SolvePart2(string[] lines)
+    public override ValueTask<Answer> SolvePart2()
     {
-        var power = lines
+        var power = _input
             .Select(x => GameRegex()
                 .Match(x).Groups)
             .Select(groups => GetSetPower(groups[5].Captures.Zip(groups[6].Captures)))

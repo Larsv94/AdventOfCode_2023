@@ -4,13 +4,6 @@ using FluentAssertions;
 namespace AdventOfCode_2023.Tests.Day1;
 public class Part1Tests
 {
-    private readonly Day1Solution _solution;
-
-    public Part1Tests()
-    {
-        _solution = new Day1Solution();
-    }
-
     [Fact]
     public async Task SolvePart1()
     {
@@ -21,7 +14,7 @@ public class Part1Tests
             treb7uchet
             """.ToLines();
 
-        var result = await _solution.SolvePart1(input);
+        var result = await new Day1Solution(input).SolvePart1();
 
         result.Should().BeInt(142);
     }
@@ -39,7 +32,7 @@ public class Part1Tests
             7pqrstsixteen
             """.ToLines();
 
-        var result = await _solution.SolvePart2(input);
+        var result = await new Day1Solution(input).SolvePart2();
 
         result.Should().BeInt(281);
     }
@@ -63,9 +56,7 @@ public class Part1Tests
     [InlineData("ninesevensrzxkzpmgz8kcjxsbdftwoner", 91)]
     public async Task SolvePart2Lines(string input, int expected)
     {
-
-
-        var result = await _solution.SolvePart2(input.ToLines());
+        var result = await new Day1Solution([input]).SolvePart2();
 
         result.Should().BeInt(expected);
     }

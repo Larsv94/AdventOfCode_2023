@@ -2,29 +2,28 @@
 using System.Text.RegularExpressions;
 
 namespace AdventOfCode_2023.Console.Day1;
-public partial class Day1Solution : ISolution
+public partial class Day1Solution(string[] input) : BaseSolution(input)
 {
-    public int Day => 1;
+    public override int Day => 1;
 
-
-    public ValueTask<Answer> SolvePart1(string[] lines)
+    public override ValueTask<Answer> SolvePart1()
     {
-        var answer = lines
+        var answer = _input
             .Select(x => x.Where(s => char.IsNumber(s)))
             .Select(x => x.ToArray())
             .Select(x => new string([x.First(), x.Last()]))
-            .Sum(x => int.Parse(x));
+            .Sum(int.Parse);
         return new(answer);
     }
 
-    public ValueTask<Answer> SolvePart2(string[] lines)
+    public override ValueTask<Answer> SolvePart2()
     {
-        var answer = lines
+        var answer = _input
             .Select(line => WrittenNumbersOrNumbers().Matches(line))
             .Select(matches => matches.Select(match => match.Groups[1].Value).ToArray())
             .Select(numbers => new string[] { numbers[0], numbers[^1] }.Select(ConvertToNumber))
             .Select(numbers => string.Join("", numbers))
-            .Sum(x => int.Parse(x));
+            .Sum(int.Parse);
 
         return new Answer(answer);
     }
