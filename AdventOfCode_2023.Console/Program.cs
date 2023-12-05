@@ -1,7 +1,7 @@
 ﻿using AdventOfCode_2023.Console.Config;
 using System.Diagnostics;
 
-var solving = 3;
+var solving = 4;
 
 var input = await File.ReadAllLinesAsync($"Day{solving}/input.txt");
 //get all BaseSolution implementations

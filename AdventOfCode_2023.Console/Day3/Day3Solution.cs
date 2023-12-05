@@ -15,7 +15,8 @@ public class Day3Solution : BaseSolution
     public override ValueTask<Answer> SolvePart1()
     {
         var validParts = _symbols.SelectMany(sym => sym.Mark(_grid).MarkedNumbers);
-        return new Answer(validParts.Sum());
+        return new Answer(validParts.Sum
+            ());
     }
 
     public override ValueTask<Answer> SolvePart2()
