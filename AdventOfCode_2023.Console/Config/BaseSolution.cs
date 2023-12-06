@@ -3,9 +3,9 @@ public abstract class BaseSolution
 {
     protected readonly string[] _input;
 
-    public BaseSolution(string[] input)
+    public BaseSolution(Func<int, string[]> getInput)
     {
-        _input = input;
+        _input = getInput(Day);
     }
 
     public abstract int Day { get; }

@@ -12,7 +12,7 @@ public class Part1Tests
             pqr3stu8vwx
             a1b2c3d4e5f
             treb7uchet
-            """.ToLines();
+            """.ToTestFunc();
 
         var result = await new Day1Solution(input).SolvePart1();
 
@@ -30,7 +30,7 @@ public class Part1Tests
             4nineeightseven2
             zoneight234
             7pqrstsixteen
-            """.ToLines();
+            """.ToTestFunc();
 
         var result = await new Day1Solution(input).SolvePart2();
 
@@ -56,7 +56,7 @@ public class Part1Tests
     [InlineData("ninesevensrzxkzpmgz8kcjxsbdftwoner", 91)]
     public async Task SolvePart2Lines(string input, int expected)
     {
-        var result = await new Day1Solution([input]).SolvePart2();
+        var result = await new Day1Solution(input.ToTestFunc()).SolvePart2();
 
         result.Should().BeInt(expected);
     }

@@ -2,7 +2,7 @@
 using System.Text.RegularExpressions;
 
 namespace AdventOfCode_2023.Console.Day2;
-public partial class Day2Solution(string[] input) : BaseSolution(input)
+public partial class Day2Solution(Func<int, string[]> getInput) : BaseSolution(getInput)
 {
     public override int Day => 2;
 

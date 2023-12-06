@@ -6,9 +6,9 @@ public class Day3Solution : BaseSolution
     private readonly List<Symbol> _symbols;
     private readonly ISchematic[][] _grid;
 
-    public Day3Solution(string[] input) : base(input)
+    public Day3Solution(Func<int, string[]> getInput) : base(getInput)
     {
-        _symbols = GetSymbols(input, out _grid);
+        _symbols = GetSymbols(_input, out _grid);
     }
     public override int Day => 3;
 

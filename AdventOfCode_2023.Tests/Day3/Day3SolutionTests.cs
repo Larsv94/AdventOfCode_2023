@@ -19,7 +19,7 @@ public class Day3SolutionTests
             ......755.
             ...$+*....
             .664.598..
-            """.ToLines();
+            """.ToTestFunc();
         _solution = new Day3Solution(input);
     }
 

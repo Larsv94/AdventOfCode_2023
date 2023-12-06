@@ -7,7 +7,13 @@ public static class TestStringExtensions
     {
         return str.Split(
         separator,
-        StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries
+        StringSplitOptions.None
         );
+    }
+
+    public static Func<int, string[]> ToTestFunc(this string str)
+    {
+        var lines = str.ToLines();
+        return (int _) => lines;
     }
 }

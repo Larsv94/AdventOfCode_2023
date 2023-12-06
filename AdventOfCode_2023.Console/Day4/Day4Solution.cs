@@ -4,7 +4,7 @@ namespace AdventOfCode_2023.Console.Day4;
 public class Day4Solution : BaseSolution
 {
     private readonly int[] _scores;
-    public Day4Solution(string[] input) : base(input)
+    public Day4Solution(Func<int, string[]> getInput) : base(getInput)
     {
         _scores = GetScores();
     }
