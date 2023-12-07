@@ -10,14 +10,14 @@ public class Day4Solution : BaseSolution
     }
     public override int Day => 4;
 
-    public override ValueTask<Answer> SolvePart1()
+    public override Answer SolvePart1()
     {
         var answer = _scores.Sum(x => (int) Math.Pow(2, x - 1));
 
         return new Answer(answer);
     }
 
-    public override ValueTask<Answer> SolvePart2()
+    public override Answer SolvePart2()
     {
         var cardMultiplier = Enumerable.Range(0, _input.Length).Select(x => 1).ToArray();
         var scores = _scores.ToArray();

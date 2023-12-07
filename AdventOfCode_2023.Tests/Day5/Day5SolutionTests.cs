@@ -5,7 +5,7 @@ namespace AdventOfCode_2023.Tests.Day5;
 public class Day5SolutionTests
 {
     [Fact]
-    public async Task SolvePart1()
+    public void SolvePart1()
     {
         var input = """
             seeds: 79 14 55 13
@@ -43,13 +43,13 @@ public class Day5SolutionTests
             56 93 4
             """.ToTestFunc();
 
-        var result = await new Day5Solution(input).SolvePart1();
+        var result = new Day5Solution(input).SolvePart1();
 
         result.Should().BeString(35.ToString());
     }
 
     [Fact]
-    public async Task SolvePart2()
+    public void SolvePart2()
     {
         var input = """
             seeds: 79 14 55 13
@@ -87,13 +87,13 @@ public class Day5SolutionTests
             56 93 4
             """.ToTestFunc();
 
-        var result = await new Day5Solution(input).SolvePart2();
+        var result = new Day5Solution(input).SolvePart2();
 
         result.Should().BeString(46.ToString());
     }
 
     [Fact]
-    public async Task SolvePart2HappyPath()
+    public void SolvePart2HappyPath()
     {
         var input = """
             seeds: 81 2
@@ -131,7 +131,7 @@ public class Day5SolutionTests
             56 93 4
             """.ToTestFunc();
 
-        var result = await new Day5Solution(input).SolvePart2();
+        var result = new Day5Solution(input).SolvePart2();
 
         result.Should().BeString(46.ToString());
     }

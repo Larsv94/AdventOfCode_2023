@@ -3,6 +3,6 @@ public interface ISolution
 {
     int Day { get; }
 
-    ValueTask<Answer> SolvePart1(string[] lines);
-    ValueTask<Answer> SolvePart2(string[] lines);
+    Answer SolvePart1(string[] lines);
+    Answer SolvePart2(string[] lines);
 }

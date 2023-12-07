@@ -19,7 +19,7 @@ Console.WriteLine();
 Stopwatch stopwatch = new();
 
 stopwatch.Start();
-string solutionPart1 = await solution.SolvePart1();
+string solutionPart1 = solution.SolvePart1();
 stopwatch.Stop();
 Console.WriteLine($"Part 1: {solutionPart1} ({stopwatch.ElapsedMilliseconds}ms)");
 
@@ -28,7 +28,7 @@ stopwatch.Start();
 string solutionPart2;
 try
 {
-    solutionPart2 = await solution.SolvePart2();
+    solutionPart2 = solution.SolvePart2();
 }
 catch (NotImplementedException)
 {

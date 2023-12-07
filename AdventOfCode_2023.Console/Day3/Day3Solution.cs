@@ -12,14 +12,14 @@ public class Day3Solution : BaseSolution
     }
     public override int Day => 3;
 
-    public override ValueTask<Answer> SolvePart1()
+    public override Answer SolvePart1()
     {
         var validParts = _symbols.SelectMany(sym => sym.Mark(_grid).MarkedNumbers);
         return new Answer(validParts.Sum
             ());
     }
 
-    public override ValueTask<Answer> SolvePart2()
+    public override Answer SolvePart2()
     {
         var ratios = _symbols.Select(gear => gear.Mark(_grid).GetRatio());
         return new Answer(ratios.Sum());

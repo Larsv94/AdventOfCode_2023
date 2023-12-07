@@ -6,7 +6,7 @@ public partial class Day2Solution(Func<int, string[]> getInput) : BaseSolution(g
 {
     public override int Day => 2;
 
-    public override ValueTask<Answer> SolvePart1()
+    public override Answer SolvePart1()
     {
         var cubes = new Dictionary<string, int>
         {
@@ -30,7 +30,7 @@ public partial class Day2Solution(Func<int, string[]> getInput) : BaseSolution(g
         return new Answer(games);
     }
 
-    public override ValueTask<Answer> SolvePart2()
+    public override Answer SolvePart2()
     {
         var power = _input
             .Select(x => GameRegex()

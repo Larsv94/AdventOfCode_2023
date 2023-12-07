@@ -5,7 +5,7 @@ namespace AdventOfCode_2023.Tests.Day4;
 public class Day4SolutionTests
 {
     [Fact]
-    public async Task Day4SolvePart1()
+    public void Day4SolvePart1()
     {
         var input = """"
             Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53
@@ -16,13 +16,13 @@ public class Day4SolutionTests
             Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11
             """".ToTestFunc();
         var solution = new Day4Solution(input);
-        var answer = await solution.SolvePart1();
+        var answer = solution.SolvePart1();
 
         answer.Should().BeInt(13);
     }
 
     [Fact]
-    public async Task Day4SolvePart2()
+    public void Day4SolvePart2()
     {
         var input = """"
             Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53
@@ -33,7 +33,7 @@ public class Day4SolutionTests
             Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11
             """".ToTestFunc();
         var solution = new Day4Solution(input);
-        var answer = await solution.SolvePart2();
+        var answer = solution.SolvePart2();
 
         answer.Should().BeInt(30);
     }

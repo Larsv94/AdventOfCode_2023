@@ -2,10 +2,10 @@
 using FluentAssertions;
 
 namespace AdventOfCode_2023.Tests.Day1;
-public class Part1Tests
+public class Day1SolutionTests
 {
     [Fact]
-    public async Task SolvePart1()
+    public void SolvePart1()
     {
         var input = """
             1abc2
@@ -14,13 +14,13 @@ public class Part1Tests
             treb7uchet
             """.ToTestFunc();
 
-        var result = await new Day1Solution(input).SolvePart1();
+        var result = new Day1Solution(input).SolvePart1();
 
         result.Should().BeInt(142);
     }
 
     [Fact]
-    public async Task SolvePart2()
+    public void SolvePart2()
     {
         var input = """
             two1nine
@@ -32,7 +32,7 @@ public class Part1Tests
             7pqrstsixteen
             """.ToTestFunc();
 
-        var result = await new Day1Solution(input).SolvePart2();
+        var result = new Day1Solution(input).SolvePart2();
 
         result.Should().BeInt(281);
     }
@@ -54,9 +54,9 @@ public class Part1Tests
     [InlineData("fourfour2two", 42)]
     [InlineData("fourfourthreetwo", 42)]
     [InlineData("ninesevensrzxkzpmgz8kcjxsbdftwoner", 91)]
-    public async Task SolvePart2Lines(string input, int expected)
+    public void SolvePart2Lines(string input, int expected)
     {
-        var result = await new Day1Solution(input.ToTestFunc()).SolvePart2();
+        var result = new Day1Solution(input.ToTestFunc()).SolvePart2();
 
         result.Should().BeInt(expected);
     }

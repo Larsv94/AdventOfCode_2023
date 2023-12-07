@@ -24,17 +24,17 @@ public class Day3SolutionTests
     }
 
     [Fact]
-    public async Task Part1InputTestAsync()
+    public void Part1InputTestAsync()
     {
-        var result = await _solution.SolvePart1();
+        var result = _solution.SolvePart1();
 
         result.Should().BeInt(4361);
     }
 
     [Fact]
-    public async Task Part2InputTestAsync()
+    public void Part2InputTestAsync()
     {
-        var result = await _solution.SolvePart2();
+        var result = _solution.SolvePart2();
 
         result.Should().BeInt(467835);
     }

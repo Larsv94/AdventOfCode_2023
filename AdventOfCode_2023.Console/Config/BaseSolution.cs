@@ -9,7 +9,7 @@ public abstract class BaseSolution
     }
 
     public abstract int Day { get; }
-    public abstract ValueTask<Answer> SolvePart1();
-    public abstract ValueTask<Answer> SolvePart2();
+    public abstract Answer SolvePart1();
+    public abstract Answer SolvePart2();
 
 }

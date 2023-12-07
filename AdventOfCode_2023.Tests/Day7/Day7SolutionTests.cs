@@ -5,7 +5,7 @@ namespace AdventOfCode_2023.Tests.Day7;
 public class Day7SolutionTests
 {
     [Fact]
-    public async Task SolvePart1Async()
+    public void SolvePart1()
     {
         var getInput = """
             32T3K 765
@@ -15,12 +15,12 @@ public class Day7SolutionTests
             QQQJA 483
             """.ToTestFunc();
         var solution = new Day7Solution(getInput);
-        var result = await solution.SolvePart1();
+        var result = solution.SolvePart1();
 
         result.Should().BeInt(6440);
     }
     [Fact]
-    public async Task SolvePart2Async()
+    public void SolvePart2()
     {
         var getInput = """
             32T3K 765
@@ -30,7 +30,7 @@ public class Day7SolutionTests
             QQQJA 483
             """.ToTestFunc();
         var solution = new Day7Solution(getInput);
-        var result = await solution.SolvePart2();
+        var result = solution.SolvePart2();
 
         result.Should().BeInt(5905);
     }

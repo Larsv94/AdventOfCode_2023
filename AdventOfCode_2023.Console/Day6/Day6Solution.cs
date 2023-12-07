@@ -12,7 +12,7 @@ public class Day6Solution : BaseSolution
 
     public override int Day => 6;
 
-    public override ValueTask<Answer> SolvePart1()
+    public override Answer SolvePart1()
     {
         var answer = _TimeDistancePairs
             .Select(GetMargin)
@@ -21,7 +21,7 @@ public class Day6Solution : BaseSolution
         return new Answer(answer.ToString());
     }
 
-    public override ValueTask<Answer> SolvePart2()
+    public override Answer SolvePart2()
     {
         var time = long.Parse(string.Join("", _TimeDistancePairs.Select(x => x.Time.ToString())));
         var distance = long.Parse(string.Join("", _TimeDistancePairs.Select(x => x.Distance.ToString())));

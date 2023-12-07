@@ -6,7 +6,7 @@ public partial class Day1Solution(Func<int, string[]> getInput) : BaseSolution(g
 {
     public override int Day => 1;
 
-    public override ValueTask<Answer> SolvePart1()
+    public override Answer SolvePart1()
     {
         var answer = _input
             .Select(x => x.Where(s => char.IsNumber(s)))
@@ -16,7 +16,7 @@ public partial class Day1Solution(Func<int, string[]> getInput) : BaseSolution(g
         return new(answer);
     }
 
-    public override ValueTask<Answer> SolvePart2()
+    public override Answer SolvePart2()
     {
         var answer = _input
             .Select(line => WrittenNumbersOrNumbers().Matches(line))

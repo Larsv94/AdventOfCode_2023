@@ -5,7 +5,7 @@ public class Day7Solution(Func<int, string[]> GetInput) : BaseSolution(GetInput)
 {
     public override int Day => 7;
 
-    public override ValueTask<Answer> SolvePart1()
+    public override Answer SolvePart1()
     {
         var answer = _input
             .Select(line => line.Split(' '))
@@ -16,7 +16,7 @@ public class Day7Solution(Func<int, string[]> GetInput) : BaseSolution(GetInput)
         return new Answer(answer);
     }
 
-    public override ValueTask<Answer> SolvePart2()
+    public override Answer SolvePart2()
     {
         var answer = _input
             .Select(line => line.Split(' '))

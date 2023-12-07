@@ -16,7 +16,7 @@ public class Day5Solution : BaseSolution
     }
     public override int Day => 5;
 
-    public override ValueTask<Answer> SolvePart1()
+    public override Answer SolvePart1()
     {
 
         var answer = _seeds
@@ -26,7 +26,7 @@ public class Day5Solution : BaseSolution
     }
 
 
-    public override ValueTask<Answer> SolvePart2()
+    public override Answer SolvePart2()
     {
         var ranges = _seeds.Chunk(2).ToArray();
         foreach (var mappings in _maps)
