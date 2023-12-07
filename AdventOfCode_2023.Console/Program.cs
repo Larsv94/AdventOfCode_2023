@@ -2,7 +2,8 @@
 using System.Diagnostics;
 
 
-var input = (int day) => File.ReadAllLines($"Day{day}/input.txt");
+var input = (int day) => RemoveLastIfEmpty(File.ReadAllLines($"Day{day}/input.txt"));
+
 //get all BaseSolution implementations
 var solution = typeof(Program).Assembly.GetTypes()
     .Where(t => t.IsClass && !t.IsAbstract && typeof(BaseSolution).IsAssignableFrom(t))
@@ -36,3 +37,18 @@ catch (NotImplementedException)
 }
 stopwatch.Stop();
 Console.WriteLine($"Part 2: {solutionPart2} ({stopwatch.ElapsedMilliseconds}ms)");
+
+string[] RemoveLastIfEmpty(string[] array)
+{
+    if (array.Length == 0)
+    {
+        return array;
+    }
+
+    if (string.IsNullOrEmpty(array[^1]))
+    {
+        return array.Take(array.Length - 1).ToArray();
+    }
+
+    return array;
+}

@@ -45,8 +45,7 @@ public class Hand(string cards, int bid, bool additionalRule = false) : ICompara
             .OrderDescending()
             .ToArray();
 
-        var jokers = 5 - cardCount.Sum();
-        cardCount = cardCount.Length != 0 ? [cardCount[0] + jokers, .. cardCount[1..]] : [5];
+        cardCount = cardCount.Length != 0 ? [cardCount[0] + 5 - cardCount.Sum(), .. cardCount[1..]] : [5];
 
         return cardCount switch
         {
@@ -70,8 +69,7 @@ public class Hand(string cards, int bid, bool additionalRule = false) : ICompara
         var (First, Second) = Cards
                 .Select(GetCardValue)
                 .Zip(other.Cards.Select(GetCardValue))
-                .Where(z => z.First != z.Second)
-                .First();
+                .FirstOrDefault(z => z.First != z.Second);
         return Second - First;
     }
 
