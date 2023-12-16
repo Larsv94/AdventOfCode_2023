@@ -5,17 +5,27 @@ public record struct Answer
 {
     public string? StringAnswer { get; }
     public int? IntAnswer { get; }
+    public long? LongAnswer { get; }
 
     public Answer(string answer)
     {
         StringAnswer = answer;
         IntAnswer = null;
+        LongAnswer = null;
     }
 
     public Answer(int answer)
     {
         StringAnswer = null;
         IntAnswer = answer;
+        LongAnswer = null;
+    }
+
+    public Answer(long answer)
+    {
+        StringAnswer = null;
+        IntAnswer = null;
+        LongAnswer = answer;
     }
 
     public override string ToString()
@@ -46,5 +56,15 @@ public record struct Answer
     public static implicit operator ValueTask<Answer>(Answer answer)
     {
         return new(answer);
+    }
+
+    public static implicit operator Answer(long answer)
+    {
+        return new(answer);
+    }
+
+    public static implicit operator long(Answer answer)
+    {
+        return answer.LongAnswer ?? throw new InvalidOperationException("Answer is not a long");
     }
 }
